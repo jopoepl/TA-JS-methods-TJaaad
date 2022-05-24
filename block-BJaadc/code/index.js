@@ -26,35 +26,35 @@ console.log(message.indexOf(`answers`))
 
 // Log true or false based on whether the word "answers" exist in message or not
 
-console.log(message.includes(`answers`))
+console.log(message.includes(`answers`) !== -1)
 
 // Log true or false based on whether the word "they" exist in message or not
 
-console.log(message.includes(`they`))
+console.log(message.includes(`they`) !== -1)
 
 // Log true or false based on whether the word "is" exist in message or not
 
-console.log(message.includes(`is`))
+console.log(message.includes(`is`) !== -1)
 
 // Log true or false based on whether the word "Is" exist in message or not
 
-console.log(message.includes(`Is`))
+console.log(message.includes(`Is`) !== -1)
 
 // Check and log whether the word from index 3 to 6 is "you" or not (use slice)
 
-console.log(message.includes(message.slice(3,6)))
+console.log(message.includes(message.slice(3,6)) === `you`)
 
 // Check and log whether the word from index 7 to 8 is "a" or not
 
-console.log(message.includes(message.slice(7,8)))
+console.log(message.includes(message.slice(7,8)) === `a`)
 
 // Check and log whether the last 3 character in message is "no!" or not (you can use -3 in slice)
 
-console.log(message.includes(message.slice(message.length - 3, message.length)))
+console.log(message.includes(message.slice(message.length - 3, message.length) === `no`))
 
 // Check and log whether the last 5 character in message is "no!" or not
 
-console.log(message.includes(message.slice(message.length - 5, message.length)))
+console.log(message.includes(message.slice(-5) === `no`)) // -5 logs the last 5 characters :O
 
 // Log the message variable, all in lowecase
 
