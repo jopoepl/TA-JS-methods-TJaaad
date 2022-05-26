@@ -8,13 +8,16 @@ let to = 'Arya Stark';
 1. Find the index of the first 'is' in the variable quote. And store it in a new variable named indexOfIs
 */
 
+indexOfIs = quote.indexOf(`is`);
 /*
 2. Find the character at the index indexOfIs (Problem 1) in quote.
 */
 
+quote.slice(indexOfIs, indexOfIs + 1);
 /*
 3. Log the message saying `The index of first is in quote is 7`
 */
+console.log(`The index of first is in quote is ${quote.indexOf(`is`)}`)
 
 /*
 4. Log the message for first 6 characters of quote like this.
@@ -26,73 +29,122 @@ let to = 'Arya Stark';
   The character at index 5 is ' '
 */
 
+let quoteArray = quote.split(` `)
+
+quoteArray.map(function(item, index) {
+  if (index < 7) {
+  console.log(`The character at index ` + index + ` is ` + item);
+  }
+})
+
+
 /*
 5. Using the variable from , to and quote variable dispaly this message
   "Syrio Forel said There is only one thing we say to death: Not today to Arya Stark." (use concat method)
 */
 
+let concatVariables = from.concat(`said `, quote, ` to `, to )
+
+console.log(concatVariables)
 /*
 6. Does from, to and quote ends with "rk". Check all three.
 */
 
+let endsInRk = (from.includes(`rk`, -2) === true && to.includes(`rk`, -2) === true && quote.includes(`rk`, -2) === true );
+
+
+console.log(endsInRk)
 /*
 7. Does quote includes the word "Only"
 */
 
+console.log(quote.includes(`Only`)); // o in quote is small caps
+
 /*
 8. Does quote includes the word " we"
 */
-
+console.log(quote.includes(`we`));
 /*
 9. Find the index of the the word `we` in quote
 */
 
+console.log(quote.indexOf(`we`));
+
 /*
 10. Split the quote into individual word and store it in a variable name quoteSplitted
 */
+let quoteSplitted = quoteArray;
 
 /*
 11. Change the word "today" in quoteSplitted to "tomorrow" and join all the words to form a sentance.
 */
 
+quoteSplitted.splice(quoteSplitted.indexOf(`today`), 1, `tomorrow`)
+
+console.log(quoteSplitted)
 /*
 12. Find the index of second "o" in quote. Use indexOf
 */
+
+console.log(quote.indexOf(`o`, quote.indexOf(`o`) + 1))
+
 
 /*
 13. Find the last index of letter "a" in quote.
 */
 
+console.log(quote.lastIndexOf(`a`));
+
+
 /*
 14. Find the second last index of letter "a" in quote.
 */
-
+console.log(quote.lastIndexOf(`a`, quote.lastIndexOf(`a`) -1 ));
 /*
 15. Make the quote 70 character long. If it has less characters add rest as .......
 Example: "Hello" (convert to 10 characters) => "Hello....."
 Store the output in a new variable
 */
-
+let quoteDotEnd = quote.padEnd(70, `.`)
+console.log(quoteDotEnd)
 /*
 16. Do same as (15) but the ... should come in start. Store the output in a new variable
 */
-
+let quoteDotStart = quote.padStart(70, `.`)
+console.log(quoteDotStart)
 /*
 17. Log the repeat of "Hello World!" 10 times.
 */
+let helloWorld = `Hello World`
 
+helloWorld.repeat(10);
 /*
 18. Replace today to tomorrow in quote.
 */
+
+quoteArray.splice(quoteArray.indexOf(`tomorrow`, 1, `today`))
+
+console.log(quote)
 
 /*
 19. Replace Stark to Lannister in quoteTo
 */
 
+let toArray = to.split(` `)
+toArray.splice(toArray.indexOf(`Stark`), 1, `Lannister`)
+
+console.log(toArray)
+
 /*
 20. Make the quote of length 30 and put ... at the end. (use slice)
 */
 
+quoteArray.splice(0, 70)
+
 /*
 21. Find out does quote, from, to starts with "A"
 */
+
+let startsInA = (from.includes(`A`, 0) === true && to.includes(`A`, 0) === true && quote.includes(`A`, 0) === true );
+
+console.log(startsInA)
