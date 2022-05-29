@@ -1,28 +1,79 @@
 // NOTE: You can not use reduce methods to solve this exercise
 
 function countAllPeople() {
-  // your code goes here
+  let sum = 0;
+  got.houses.map((value) => {
+    sum = sum + value.people.length;
+    (sum)
+  })
+  return sum
 }
+
+
 
 function peopleByHouses() {
-  // your code goes here
+  let final = [];
+  got.houses.map((value, i) => {
+   final[i] = value.people.length;
+  })
+  return final
+   
 }
+
+
 
 function everyone() {
-  // your code goes here
+  let final = [];
+  got.houses.map((value, i) => {
+    got.houses[i].people.map((value1) => final.push(value1));
+  })
+  return final
 }
+
+
+
+
 
 function nameWithS() {
-  // your code goes here
+  let final = [];
+  got.houses.map((value, i) => {
+    got.houses[i].people.map((value1) => {
+      if (value.name.includes(`S`) || (value.name.includes(`s`)))
+      final.push(value1)
+    });
+  })
+  return final
 }
+
+
 
 function nameWithA() {
-  // your code goes here
+  let final = [];
+  got.houses.map((value, i) => {
+    got.houses[i].people.map((value1) => {
+      if (value.name.includes(`A`) || (value.name.includes(`a`)))
+      final.push(value1)
+    });
+  })
+  return final
 }
 
+
+
 function surnameWithS() {
-  // your code goes here
+  {
+    let final = [];
+    got.houses.map((value, i) => {
+      got.houses[i].people.map((value1) => {
+        let splitName = value.name.split(` `);
+        if (splitName[1].startsWith(`S`))
+        final.push(value1.name)
+      });
+    })
+    return final
+  }
 }
+
 
 function surnameWithA() {
   // your code goes here
