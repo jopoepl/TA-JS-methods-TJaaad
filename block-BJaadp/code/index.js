@@ -15,22 +15,71 @@ let persons = [
 
 // NOTE: Use reduce method whereever you can to solve this exercise:
 
+
+
 // Find the average grade
 
+let personsGrade = persons.map((value) => value.grade)
+
+console.log(personsGrade)
+
+const initialValue = 0;
+
+avgPersonsGrade = personsGrade.reduce((previousValue, currentValue) => previousValue + currentValue) / personsGrade.length
+
+console.log(avgPersonsGrade); // 11.08
+
+
+
+
 // Find the average grade of male
+let males = persons.filter(value => value.sex === `M`)
+console.log(males)
+let maleGrade = males.map(function(value){
+ return value.grade
+})
+
+console.log(maleGrade)
+
+function avgGrade (arr) {
+  return arr.reduce((previousValue, currentValue) => previousValue + currentValue) / arr.length
+}
+
+console.log(avgGrade(maleGrade))
+
+
 
 // Find the average grade of female
 
+let females = persons.filter(value => value.sex === `F`)
+let femaleGrade = females.map(value => value.grade)
+console.log(avgGrade(femaleGrade))
+
+
 // Find the highest grade
+
+let sortedPersonsGrade = personsGrade.sort((a,b) => b - a)
+
+console.log(sortedPersonsGrade[0])
+
+
 
 // Find the highest grade in male
 
+let sortedMaleGrade = maleGrade.sort((a,b) => b - a)
+
+console.log(sortedMaleGrade[0])
+
 // Find the highest grade in female
+
+let sortedFemaleGrade = femaleGrade.sort((a,b) => b - a)
+
+console.log(sortedFemaleGrade[0])
 
 // Find the highest grade for people whose name starts with 'J' or 'P'
 
 const fruitBasket = [
-  'banana',
+  'banana', 
   'cherry',
   'orange',
   'apple',
@@ -52,6 +101,15 @@ Output:
 {banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1}
 */
 
+
+
+// console.log(fruitBasketObj)
+
+ 
+// fruitBasket.map(function(value){
+//   return fruitBasketObj.value = (fruitBasket.filter(value => value === value)).length
+
+// })
 /* 
 
 Use the fruitBasket array to create an array of array. Each array will contain two values name of fruit and number of times
@@ -69,7 +127,10 @@ const data = [
   [10, 11, 12],
 ];
 
-// Using reduce flat data array
+// 
+
+data.flat(Infinity)
+console.log(data)
 
 const dataTwo = [
   [1, 2, 3],
@@ -77,6 +138,9 @@ const dataTwo = [
   [7, 8, 9],
   [[10, 11], 12],
 ];
+
+dataTwo.flat(Infinity)
+console.log(dataTwo)
 
 // Using reduce flat dataTwo array
 
