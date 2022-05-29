@@ -1,35 +1,82 @@
 // NOTE: You can only use the (reduce) array method to solve this exercise:
 
 function countAllPeople() {
-  // your code goes here
+  let allCount = got.houses.reduce((totalCount, house) => {
+    totalCount = totalCount + house.people.length;
+    return totalCount
+  }, 0)
+  return allCount
 }
 
+
+
+
+
 function peopleByHouses() {
-  // your code goes here
+  let peopleHouses = got.houses.reduce((peopleObj, house) => {
+    peopleObj[house.name] = house.people.length;
+    return peopleObj 
+  }, {})
+  return peopleHouses;
 }
 
 function everyone() {
-  // your code goes here
+  let peopleNames = got.houses.reduce((allPeople, house) => {
+    allPeople = allPeople.concat(house.people.map((person) => {
+      return person.name
+    }))
+    return allPeople
+  }, [])
+  return peopleNames
 }
+
 
 function nameWithS() {
-  // your code goes here
-}
+  let peopleNameS = everyone().reduce((peopleS, people) => {
+    if (people.toLowerCase().includes(`s`)){
+      peopleS = peopleS.concat(people)
+    } return peopleS
+  }, [])
+  return peopleNameS
+  }
+  
 
 function nameWithA() {
-  // your code goes here
-}
+  let peopleNameS = everyone().reduce((peopleS, people) => {
+    if (people.toLowerCase().includes(`a`)){
+      peopleS = peopleS.concat(people)
+    } return peopleS
+  }, [])
+  return peopleNameS
+  }
 
 function surnameWithS() {
-  // your code goes here
-}
+  let peopleSurnameS = everyone().reduce((peopleS, people) => {
+    if (people.toLowerCase().split(` `)[1].startsWith(`s`)){
+      peopleS = peopleS.concat(people)
+    } return peopleS
+  }, [])
+  return peopleSurnameS
+  }
 
 function surnameWithA() {
-  // your code goes here
-}
+  let peopleSurnameA = everyone().reduce((peopleA, people) => {
+    if (people.toLowerCase().split(` `)[1].startsWith(`a`)){
+      peopleA = peopleA.concat(people)
+    } return peopleA
+  }, [])
+  return peopleSurnameA
+  }
+
 
 function peopleNameOfAllHouses() {
-  // your code goes here
+  let peopleHouses = got.houses.reduce((peopleObj, house) => {
+    peopleObj[house.name] = house.people.map((person) => {
+      return person.name
+    })
+    return peopleObj 
+  }, {})
+  return peopleHouses;
 }
 
 // Testing your result after writing your function
